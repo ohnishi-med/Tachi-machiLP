@@ -1,3 +1,7 @@
+import React, { useEffect } from 'react';
+import { useLocation } from 'react-router-dom';
+import HeroImage from './assets/hero-referral.png';
+import FeaturePlanImage from './assets/feature-plan.png';
 import FeatureScheduleImage from './assets/feature-schedule.png';
 
 // ... (existing imports)
