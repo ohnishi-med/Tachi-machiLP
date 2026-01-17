@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
-import HeroImage from './assets/hero-referral.png';
 import FeaturePlanImage from './assets/feature-plan.png';
 import FeatureScheduleImage from './assets/feature-schedule.png';
+import HeroCompositeImage from './assets/hero-doctor-composite.png';
+import DemoVideo from './assets/demo.mp4';
 
 // ... (existing imports)
 
@@ -71,20 +72,22 @@ const LandingPage: React.FC = () => {
                             </div>
                         </div>
 
-                        {/* Right Column: Image */}
+                        {/* Right Column: Image Composition */}
                         <div className="lg:w-1/2 relative z-10">
                             <div className="relative rounded-xl shadow-2xl border border-slate-200 bg-white overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                                {/* Composite Image */}
                                 <img
-                                    src={HeroImage}
-                                    alt="紹介状作成画面：プレビューとワンクリック入力"
+                                    src={HeroCompositeImage}
+                                    alt="診療風景とタチマチ画面"
                                     className="w-full h-auto object-cover"
                                 />
-                                {/* Overlay / Badge if needed */}
-                                <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
-                                    住所検索不要！
+
+                                {/* Badge */}
+                                <div className="absolute top-4 left-4 bg-teal-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg">
+                                    現場の様子
                                 </div>
                             </div>
-                            {/* Decorative background blob behind image */}
+                            {/* Decorative background blob */}
                             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-100 rounded-full blur-3xl opacity-40 -z-10"></div>
                         </div>
                     </div>
@@ -151,27 +154,15 @@ const LandingPage: React.FC = () => {
                         複雑な操作は一切不要。直感的なインターフェースで、誰でもすぐに使いこなせます。
                     </p>
 
-                    <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden border border-slate-700 bg-slate-800 relative aspect-video group cursor-pointer">
-                        {/* 
-                            動画ファイルがある場合は、以下のコメントアウトを解除し、パスを指定してください。
-                            import DemoVideo from './assets/demo.mp4';
-                            <video src={DemoVideo} controls className="w-full h-full object-cover" />
-                        */}
-                        <img
-                            src={HeroImage}
-                            alt="デモ動画プレビュー"
-                            className="w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity"
-                        />
-                        <div className="absolute inset-0 flex items-center justify-center">
-                            <div className="w-20 h-20 bg-teal-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
-                                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
-                                    <path d="M8 5v14l11-7z" />
-                                </svg>
-                            </div>
-                        </div>
-                        <div className="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
-                            0:00 / 1:30
-                        </div>
+                    <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden border border-slate-700 bg-slate-800 relative aspect-video group px-0">
+                        <video
+                            src={DemoVideo}
+                            controls
+                            className="w-full h-full object-contain bg-black"
+                            poster={HeroCompositeImage} // Show the hero image as poster before play
+                        >
+                            お使いのブラウザは動画タグに対応していません。
+                        </video>
                     </div>
                 </div>
             </section>
