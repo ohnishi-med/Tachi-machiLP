@@ -273,7 +273,7 @@ const LandingPage: React.FC = () => {
             <footer className="bg-slate-900 text-slate-400 py-12">
                 <div className="container mx-auto px-4 text-center">
                     <p className="font-medium text-lg mb-2">タチマチ</p>
-                    <p className="text-sm opacity-60">&copy; 2026 Antigravity. All rights reserved.</p>
+                    <p className="text-sm opacity-60">&copy; 2026 Coken. All rights reserved.</p>
                 </div>
             </footer>
         </div>
