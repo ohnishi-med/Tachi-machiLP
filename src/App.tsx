@@ -112,24 +112,24 @@ const LandingPage: React.FC = () => {
                         {/* Text Side */}
                         <div className="lg:w-1/2">
                             <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
-                                矛盾のない<span className="text-blue-600">療養計画書</span>を、<br />一瞬で。
+                                一貫した<span className="text-blue-600">療養計画書</span>を、<br />一瞬で。
                             </h2>
                             <p className="text-lg text-slate-600 mb-6 leading-relaxed">
-                                過去の療養計画書と一致した、矛盾のない計画書が作成可能です。<br />
-                                併せて治療計画も設定し、年間の検査計画も分かりやすく提示できます。
+                                前回の計画内容をスマートに引き継ぎ、一貫性のある療養計画書を自動で作成。<br />
+                                長期的な治療方針に沿った年間の検査スケジュールも合わせて提示し、継続的なケアを強力にサポートします。
                             </p>
                             <ul className="space-y-4 mb-8">
                                 <li className="flex items-start">
                                     <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                    <span className="text-slate-700">過去データとの整合性を自動チェック</span>
+                                    <span className="text-slate-700">前回データとの一貫性を自動保持</span>
                                 </li>
                                 <li className="flex items-start">
                                     <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                    <span className="text-slate-700">検査・治療計画を一括管理</span>
+                                    <span className="text-slate-700">年間の検査・治療プランを一括管理</span>
                                 </li>
                                 <li className="flex items-start">
                                     <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
-                                    <span className="text-slate-700">患者さんにも分かりやすいアウトプット</span>
+                                    <span className="text-slate-700">患者さんの理解を深める分かりやすい計画表</span>
                                 </li>
                             </ul>
                         </div>
