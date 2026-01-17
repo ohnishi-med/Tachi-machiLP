@@ -54,6 +54,9 @@ const LandingPage: React.FC = () => {
                     <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
                         {/* Left Column: Text */}
                         <div className="lg:w-1/2 text-center lg:text-left z-20">
+                            <span className="inline-block py-1 px-3 rounded-full bg-teal-50 text-teal-600 text-sm font-bold mb-6 tracking-wide">
+                                医療文書作成支援アプリ
+                            </span>
                             <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
                                 書類、<span className="text-teal-500">タチマチ</span>終わり。
                             </h1>
@@ -62,13 +65,21 @@ const LandingPage: React.FC = () => {
                                 ワンクリックで紹介先の住所まで入力。<br />
                                 <span className="font-bold text-slate-800 bg-teal-100 px-1">住所を検索する手間はもういりません。</span>
                             </p>
-                            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4 mb-8">
                                 <button
                                     onClick={handleStart}
                                     className="px-8 py-4 bg-teal-500 hover:bg-teal-600 text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer"
                                 >
                                     今すぐ始める
                                 </button>
+                            </div>
+                            <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-3 text-slate-500 text-sm font-medium">
+                                <span className="text-slate-400">作成可能書類 :</span>
+                                <div className="flex gap-2">
+                                    <span className="bg-slate-100 px-2 py-1 rounded border border-slate-200">紹介状</span>
+                                    <span className="bg-slate-100 px-2 py-1 rounded border border-slate-200">療養計画書</span>
+                                    <span className="bg-slate-100 px-2 py-1 rounded border border-slate-200">診断書</span>
+                                </div>
                             </div>
                         </div>
 
