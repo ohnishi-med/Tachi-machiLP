@@ -1,5 +1,27 @@
-import React, { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
+import FeatureScheduleImage from './assets/feature-schedule.png';
+
+// ... (existing imports)
+
+// ... (inside component)
+
+{/* Image Side */ }
+<div className="lg:w-1/2 relative">
+    <div className="rounded-xl shadow-xl border border-slate-200 bg-slate-50 overflow-hidden relative z-10">
+        <img
+            src={FeaturePlanImage}
+            alt="生活習慣病療養計画書作成画面"
+            className="w-full h-auto"
+        />
+    </div>
+    {/* Schedule Image Overlay */}
+    <div className="absolute -bottom-12 -right-4 w-3/4 rounded-xl shadow-2xl border border-slate-200 bg-white overflow-hidden z-20 transform rotate-2 hover:rotate-0 transition-transform duration-500 hidden md:block">
+        <img
+            src={FeatureScheduleImage}
+            alt="年間検査計画表"
+            className="w-full h-auto"
+        />
+    </div>
+</div>
 
 const LandingPage: React.FC = () => {
     const location = useLocation();
@@ -22,51 +44,133 @@ const LandingPage: React.FC = () => {
     return (
         <div className="min-h-screen bg-white font-sans text-slate-900">
             {/* ヒーローセクション */}
-            <header className="relative overflow-hidden bg-slate-50 pt-16 pb-32 lg:pt-24 lg:pb-40">
+            <header className="relative overflow-hidden bg-slate-50 pt-16 pb-20 lg:pt-24 lg:pb-32">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-                    <div className="text-center max-w-4xl mx-auto">
-                        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-slate-900 mb-8">
-                            書類、<span className="text-teal-500">タチマチ</span>終わり。
-                        </h1>
-                        <p className="mt-4 text-xl md:text-2xl text-slate-600 font-medium mb-10 max-w-2xl mx-auto">
-                            時間のかかってしまう診断書や紹介状の作成をサポート。<br />
-                            医療文書作成アシスタント「タチマチ」
-                        </p>
-                        <div className="flex flex-col sm:flex-row justify-center gap-4">
-                            <button
-                                onClick={handleStart}
-                                className="px-8 py-4 bg-teal-500 hover:bg-teal-600 text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer"
-                            >
-                                今すぐ始める
-                            </button>
+                    <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+                        {/* Left Column: Text */}
+                        <div className="lg:w-1/2 text-center lg:text-left z-20">
+                            <h1 className="text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+                                書類、<span className="text-teal-500">タチマチ</span>終わり。
+                            </h1>
+                            <p className="mt-4 text-xl text-slate-600 font-medium mb-8 leading-relaxed">
+                                プレビューを見ながらの直感的な編集。<br />
+                                ワンクリックで紹介先の住所まで入力。<br />
+                                <span className="font-bold text-slate-800 bg-teal-100 px-1">住所を検索する手間はもういりません。</span>
+                            </p>
+                            <div className="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                                <button
+                                    onClick={handleStart}
+                                    className="px-8 py-4 bg-teal-500 hover:bg-teal-600 text-white text-lg font-bold rounded-lg shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1 cursor-pointer"
+                                >
+                                    今すぐ始める
+                                </button>
+                            </div>
                         </div>
 
-                        {/* Visual Placeholder */}
-                        <div className="mt-16 p-4 bg-white rounded-xl shadow-2xl border border-slate-200 max-w-3xl mx-auto transform rotate-1 hover:rotate-0 transition-transform duration-500">
-                            <div className="h-4 bg-slate-100 rounded-t-lg mb-4 flex items-center space-x-2 px-3">
-                                <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                                <div className="w-3 h-3 rounded-full bg-yellow-400"></div>
-                                <div className="w-3 h-3 rounded-full bg-green-400"></div>
-                            </div>
-                            <div className="space-y-4 p-4 text-left">
-                                <div className="h-8 w-1/3 bg-slate-100 rounded"></div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="h-10 bg-slate-50 rounded border border-slate-100"></div>
-                                    <div className="h-10 bg-slate-50 rounded border border-slate-100"></div>
+                        {/* Right Column: Image */}
+                        <div className="lg:w-1/2 relative z-10">
+                            <div className="relative rounded-xl shadow-2xl border border-slate-200 bg-white overflow-hidden transform rotate-1 hover:rotate-0 transition-transform duration-500">
+                                <img
+                                    src={HeroImage}
+                                    alt="紹介状作成画面：プレビューとワンクリック入力"
+                                    className="w-full h-auto object-cover"
+                                />
+                                {/* Overlay / Badge if needed */}
+                                <div className="absolute top-4 right-4 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-full shadow-lg animate-pulse">
+                                    住所検索不要！
                                 </div>
-                                <div className="h-32 bg-slate-50 rounded border border-slate-100"></div>
-                                <div className="h-10 w-1/4 bg-teal-500 rounded opacity-20"></div>
+                            </div>
+                            {/* Decorative background blob behind image */}
+                            <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[120%] h-[120%] bg-teal-100 rounded-full blur-3xl opacity-40 -z-10"></div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+            {/* Feature Highlight Section (Plan) */}
+            <section className="py-24 bg-white relative z-10">
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+                    <div className="flex flex-col lg:flex-row-reverse items-center gap-16">
+                        {/* Text Side */}
+                        <div className="lg:w-1/2">
+                            <h2 className="text-3xl md:text-4xl font-bold text-slate-900 mb-6">
+                                矛盾のない<span className="text-blue-600">療養計画書</span>を、<br />一瞬で。
+                            </h2>
+                            <p className="text-lg text-slate-600 mb-6 leading-relaxed">
+                                過去の療養計画書と一致した、矛盾のない計画書が作成可能です。<br />
+                                併せて治療計画も設定し、年間の検査計画も分かりやすく提示できます。
+                            </p>
+                            <ul className="space-y-4 mb-8">
+                                <li className="flex items-start">
+                                    <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span className="text-slate-700">過去データとの整合性を自動チェック</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span className="text-slate-700">検査・治療計画を一括管理</span>
+                                </li>
+                                <li className="flex items-start">
+                                    <svg className="w-6 h-6 text-green-500 mr-2 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7"></path></svg>
+                                    <span className="text-slate-700">患者さんにも分かりやすいアウトプット</span>
+                                </li>
+                            </ul>
+                        </div>
+
+                        {/* Image Side */}
+                        <div className="lg:w-1/2 relative">
+                            <div className="rounded-xl shadow-xl border border-slate-200 bg-slate-50 overflow-hidden relative z-10">
+                                <img
+                                    src={FeaturePlanImage}
+                                    alt="生活習慣病療養計画書作成画面"
+                                    className="w-full h-auto"
+                                />
+                            </div>
+                            {/* Schedule Image Overlay */}
+                            <div className="absolute -bottom-12 -right-4 w-3/4 rounded-xl shadow-2xl border border-slate-200 bg-white overflow-hidden z-20 transform rotate-2 hover:rotate-0 transition-transform duration-500 hidden md:block">
+                                <img
+                                    src={FeatureScheduleImage}
+                                    alt="年間検査計画表"
+                                    className="w-full h-auto"
+                                />
                             </div>
                         </div>
                     </div>
                 </div>
+            </section>
 
-                {/* Background decoration */}
-                <div className="absolute top-0 left-0 w-full h-full overflow-hidden -z-0 pointer-events-none">
-                    <div className="absolute -top-[20%] -right-[10%] w-[50%] h-[50%] bg-teal-100 rounded-full blur-3xl opacity-30"></div>
-                    <div className="absolute top-[40%] -left-[10%] w-[40%] h-[40%] bg-blue-100 rounded-full blur-3xl opacity-30"></div>
+            {/* Demo Video Section */}
+            <section className="py-24 bg-slate-900 text-white relative overflow-hidden">
+                <div className="absolute inset-0 bg-teal-900 opacity-20"></div>
+                <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+                    <h2 className="text-3xl md:text-4xl font-bold mb-6">実際の動作をご覧ください</h2>
+                    <p className="text-lg text-slate-300 mb-12 max-w-2xl mx-auto">
+                        複雑な操作は一切不要。直感的なインターフェースで、誰でもすぐに使いこなせます。
+                    </p>
+
+                    <div className="max-w-4xl mx-auto rounded-2xl shadow-2xl overflow-hidden border border-slate-700 bg-slate-800 relative aspect-video group cursor-pointer">
+                        {/* 
+                            動画ファイルがある場合は、以下のコメントアウトを解除し、パスを指定してください。
+                            import DemoVideo from './assets/demo.mp4';
+                            <video src={DemoVideo} controls className="w-full h-full object-cover" />
+                        */}
+                        <img
+                            src={HeroImage}
+                            alt="デモ動画プレビュー"
+                            className="w-full h-full object-cover opacity-50 group-hover:opacity-40 transition-opacity"
+                        />
+                        <div className="absolute inset-0 flex items-center justify-center">
+                            <div className="w-20 h-20 bg-teal-500 rounded-full flex items-center justify-center shadow-lg group-hover:scale-110 transition-transform">
+                                <svg className="w-8 h-8 text-white ml-1" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M8 5v14l11-7z" />
+                                </svg>
+                            </div>
+                        </div>
+                        <div className="absolute bottom-4 right-4 bg-black bg-opacity-70 text-white text-xs px-2 py-1 rounded">
+                            0:00 / 1:30
+                        </div>
+                    </div>
                 </div>
-            </header>
+            </section>
 
             {/* Features Section */}
             <section className="py-24 bg-white relative z-10">
